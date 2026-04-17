@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision por Computador — Thresholding</title>
+  <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Vision por Computador</h1>
+    <p>Thresholding &mdash; Clasificacion y Segmentacion de Color</p>
+  </header>
+
+  <!-- Video fuente oculto -->
+  <video id="video" width="460" height="345" autoplay playsinline></video>
+
+  <!-- Fila de los tres visores -->
+  <div class="visor-row">
+
+    <!-- VISOR 1: Imagen normal -->
+    <div class="visor-cell">
+      <span class="cell-title">Imagen Original</span>
+      <div class="canvas-wrapper">
+        <canvas id="canvasRaw" width="460" height="345"></canvas>
+        <span class="canvas-badge badge-raw">LIVE</span>
+      </div>
+      <div class="color-tags" id="tags-raw"></div>
+    </div>
+
+    <!-- VISOR 2: Contorno adaptable sobre imagen real -->
+    <div class="visor-cell">
+      <span class="cell-title">Deteccion de Contorno</span>
+      <div class="canvas-wrapper">
+        <canvas id="canvas" width="460" height="345"></canvas>
+        <span class="canvas-badge badge-main">CONTORNO</span>
+      </div>
+      <div class="color-tags" id="tags-canvas"></div>
+    </div>
+
+    <!-- VISOR 3: Segmentacion por color -->
+    <div class="visor-cell">
+      <span class="cell-title">Segmentacion de Color</span>
+      <div class="canvas-wrapper">
+        <canvas id="canvasSeg" width="460" height="345"></canvas>
+        <span class="canvas-badge badge-seg">MASCARA</span>
+      </div>
+      <div class="color-tags" id="tags-seg"></div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Panel de informacion tecnica -->
+  <p id="info">Iniciando camara...</p>
+
+  <!-- Leyenda de colores reconocidos -->
+  <div class="legend-row">
+    <div class="legend-item"><div class="legend-dot" style="background:#ff4444;"></div> Rojo</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#44cc44;"></div> Verde</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4488ff;"></div> Azul</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#ffaa00;"></div> Naranja</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#dddddd;"></div> Blanco</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#444444;border:1px solid #666;"></div> Negro</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#888888;"></div> Gris</div>
+  </div>
+
+  <script src="../JS/codigo.js"></script>
+</body>
+</html>
