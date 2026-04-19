@@ -10,7 +10,6 @@ const ctx          = canvas.getContext('2d');
 const ctxSeg       = canvasSeg.getContext('2d');
 const info         = document.getElementById('info');
 const btnActivar   = document.getElementById('btn-activar');
-const btnCapturar  = document.getElementById('btn-capturar');
 const visorRow     = document.getElementById('visor-row');
 const camPlaceholder = document.getElementById('cam-placeholder');
 
@@ -33,7 +32,6 @@ btnActivar.addEventListener('click', () => {
       camPlaceholder.hidden = true;
       visorRow.hidden = false;
       btnActivar.hidden = true;
-      btnCapturar.hidden = false;
       info.textContent = "Camara activada — iniciando procesamiento...";
       console.log("Camara activada correctamente");
     })
@@ -44,33 +42,6 @@ btnActivar.addEventListener('click', () => {
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> Reintentar';
       info.textContent = "No se pudo acceder a la camara. Verifica los permisos en tu navegador e intenta de nuevo.";
     });
-});
-
-// =============================================
-// CAPTURAR IMAGEN — descarga el frame actual
-// =============================================
-btnCapturar.addEventListener('click', () => {
-  // Combinar los tres visores en una sola imagen horizontal
-  const W  = canvasRaw.width;
-  const H  = canvasRaw.height;
-  const gap = 12;
-
-  const composite = document.createElement('canvas');
-  composite.width  = W * 3 + gap * 2;
-  composite.height = H;
-  const cmpCtx = composite.getContext('2d');
-
-  cmpCtx.fillStyle = '#07090f';
-  cmpCtx.fillRect(0, 0, composite.width, composite.height);
-
-  cmpCtx.drawImage(canvasRaw, 0,           0, W, H);
-  cmpCtx.drawImage(canvas,    W + gap,     0, W, H);
-  cmpCtx.drawImage(canvasSeg, (W + gap) * 2, 0, W, H);
-
-  const enlace = document.createElement('a');
-  enlace.download = 'captura-' + new Date().toISOString().slice(0, 19).replace(/[:.]/g, '-') + '.png';
-  enlace.href = composite.toDataURL('image/png');
-  enlace.click();
 });
 
 // =============================================
