@@ -228,8 +228,112 @@ header::after {
 .tag-Gris    .dot { background: #888888; }
 
 /* =============================================
-   DIVISOR ENTRE CANVASES Y PANEL INFO
+   PANEL DE CONTROL (botones)
    ============================================= */
+#ctrl-panel {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+#ctrl-panel button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 28px;
+  border-radius: 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid;
+  transition: background 0.2s, box-shadow 0.2s, opacity 0.2s, transform 0.1s;
+}
+
+#ctrl-panel button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+#ctrl-panel button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+#ctrl-panel button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Boton Activar Camara */
+#btn-activar {
+  background: rgba(0,212,255,0.08);
+  color: #00d4ff;
+  border-color: rgba(0,212,255,0.45);
+  box-shadow: 0 0 14px rgba(0,212,255,0.12);
+}
+
+#btn-activar:hover:not(:disabled) {
+  background: rgba(0,212,255,0.16);
+  box-shadow: 0 0 22px rgba(0,212,255,0.28);
+}
+
+/* Boton Capturar Imagen */
+#btn-capturar {
+  background: rgba(100,220,100,0.07);
+  color: #44cc88;
+  border-color: rgba(68,204,136,0.45);
+  box-shadow: 0 0 14px rgba(68,204,136,0.1);
+}
+
+#btn-capturar:hover {
+  background: rgba(100,220,100,0.15);
+  box-shadow: 0 0 22px rgba(68,204,136,0.26);
+}
+
+/* =============================================
+   PANTALLA PLACEHOLDER (sin camara activa)
+   ============================================= */
+#cam-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 520px;
+  margin: 0 auto 36px;
+  padding: 48px 32px;
+  border: 1px dashed rgba(0,212,255,0.2);
+  border-radius: 14px;
+  background: rgba(0,212,255,0.02);
+  color: #4a5568;
+  text-align: center;
+}
+
+#cam-placeholder svg {
+  width: 64px;
+  height: 64px;
+  color: rgba(0,212,255,0.25);
+  flex-shrink: 0;
+}
+
+#cam-placeholder p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+#cam-placeholder p strong {
+  color: #00d4ff99;
+}
+
+
 .divider {
   width: 100%;
   max-width: 1400px;
