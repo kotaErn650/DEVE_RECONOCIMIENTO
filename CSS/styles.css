@@ -300,33 +300,34 @@ header::after {
    ============================================= */
 #cam-placeholder {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  max-width: 520px;
-  margin: 0 auto 36px;
-  padding: 48px 32px;
+  gap: 10px;
+  max-width: 340px;
+  margin: 0 auto 16px;
+  padding: 12px 18px;
   border: 1px dashed rgba(0,212,255,0.2);
-  border-radius: 14px;
+  border-radius: 10px;
   background: rgba(0,212,255,0.02);
   color: #4a5568;
-  text-align: center;
+  text-align: left;
 }
 
 #cam-placeholder svg {
-  width: 64px;
-  height: 64px;
+  width: 28px;
+  height: 28px;
   color: rgba(0,212,255,0.25);
   flex-shrink: 0;
 }
 
 #cam-placeholder p {
   font-family: 'Share Tech Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.5px;
-  line-height: 1.7;
+  font-size: 0.70rem;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
   color: #4a5568;
+  margin: 0;
 }
 
 #cam-placeholder p strong {
