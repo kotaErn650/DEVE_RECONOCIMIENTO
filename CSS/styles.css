@@ -212,6 +212,9 @@ header::after {
 .tag-Verde   { border-color: #44cc44; color: #77dd77; }
 .tag-Verde   .dot { background: #44cc44; box-shadow: 0 0 4px #44cc44; }
 
+.tag-Amarillo { border-color: #ffd60a; color: #ffe45e; }
+.tag-Amarillo .dot { background: #ffd60a; box-shadow: 0 0 4px #ffd60a; }
+
 .tag-Azul    { border-color: #4488ff; color: #77aaff; }
 .tag-Azul    .dot { background: #4488ff; box-shadow: 0 0 4px #4488ff; }
 
