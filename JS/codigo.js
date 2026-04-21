@@ -66,6 +66,10 @@ function clasificarColor(r, g, b) {
   if (brillo >= 45 && brillo <= 200 && rango < 38)
     return "Gris";
 
+  // AMARILLO: rojo y verde altos, azul bajo
+  if (r > 160 && g > 165 && b < 120 && r > b + 70 && g > b + 70 && Math.abs(r - g) < 75)
+    return "Amarillo";
+
   // NARANJA: rojo alto, verde medio-bajo, azul bajo
   if (r > 160 && g > 60 && g < 165 && b < 90 && r > g + 55)
     return "Naranja";
@@ -91,6 +95,7 @@ function clasificarColor(r, g, b) {
 const estilos = {
   Rojo:    { contorno: "#ff4444", mascara: [220,  50,  50] },
   Verde:   { contorno: "#44cc44", mascara: [ 50, 200,  50] },
+  Amarillo:{ contorno: "#ffd60a", mascara: [255, 214,  10] },
   Azul:    { contorno: "#4488ff", mascara: [ 50, 100, 220] },
   Naranja: { contorno: "#ffaa00", mascara: [255, 140,   0] },
   Blanco:  { contorno: "#dddddd", mascara: [210, 210, 210] },
